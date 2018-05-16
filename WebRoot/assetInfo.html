@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>注册资产信息</title>
+
+    <!-- Bootstrap -->
+    <link  type="text/css" rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link  type="text/css" rel="stylesheet" href="css/common.css" >
+    <link  type="text/css" rel="stylesheet" href="css/bootstrap-dialog.min.css" >
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/plugins/my97datepicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="./js/assetInfo.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-dialog.min.js"></script>
+  </head>
+<body>
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header ">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand href="#"><span
+					class="glyphicon glyphicon-home"></span>&nbsp;首页</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">资产信息管理 <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">维护记录</a></li>
+					<li><a href="#">资产巡检</a></li>
+					<li><a href="#">统计分析</a></li>
+					<li><a href="#">统计分析</a></li>
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> admin</a></li>
+					<li><a href="#" class="dropdown-toggle">注销</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		
+	</nav>
+
+	<div class="container row-container">
+
+		<div class="emi-box">
+			<span class="emi-title">新增资产信息</span>
+
+
+			<table class="table table-striped table table-hover margin-top-20">
+
+				<tr>
+					<td class="emi-key fullname-label"><span>*</span> 资产物品名称:</td>
+					<td><input class="emi-input fullname" type="text"></td>
+					<td class="emi-key type-label"><span>*</span> 资产物品类型:</td>
+					<td>
+					  <select class="emi-select type select-type"></select>
+					  <button type="button" id="modal-button1" class="btn btn-primary btn-xs" >编辑</button>
+					</td>
+				</tr>
+				<tr>
+					<td class="emi-key state-label"><span>*</span> 资产状态:</td>
+					<td><select class="emi-select state select-state"></select>
+					<button type="button" id="modal-button2" class="btn btn-primary btn-xs" >编辑</button></td>
+					<td class="emi-key add-label"><span>*</span> 资产存放地址:</td>
+					<td>
+					<select class="emi-select address">
+						<option value="-1">请选择...</option>
+					    <option value="0">教学楼一</option>
+					    <option value="1">教学楼二</option>
+					    <option value="2">学生公寓一</option>
+					    <option value="3">学生公寓二</option>
+						</select></td>
+				</tr>
+				<tr>
+					<td class="emi-key warranty-label"><span>*</span> 保修截止日期:</td>
+					<td><input class="emi-input date warranty" type="text"></td>
+					
+					<td class="emi-key person-label"><span>*</span> 资产物品负责人:</td>
+					<td>
+					<select class="emi-select person">
+						<option value="-1">请选择...</option>
+					    <option value="0">陈伟哲</option>
+					    <option value="1">卢笑语</option>
+					    <option value="2">侯先伦</option>
+					    <option value="3">石耀</option>
+						</select></td>
+				</tr>
+				<tr>
+					<td class="emi-key amount-label ">所属学院：</td>
+					<td>
+					  <select class="emi-select college">
+						<option value="-1">请选择...</option>
+					    <option value="0">信息与通信工程学院</option>
+					    <option value="1">电子工程学院</option>
+					    <option value="2">计算机学院</option>
+					    <option value="3">自动化学院</option>
+					    <option value="3">经济管理学院</option>
+					    <option value="3">人文学院</option>
+					  </select>
+					</td>
+					<td class="emi-key date-label">出厂时间:</td>
+					<td><input class="emi-input date-before date madetime" type="text"></td>
+				</tr>
+				
+				<tr>
+				    <td  class="emi-key2 descInfo-label">资产物品备注：</td>
+				    <td  rowspan="2" colspan="3"><input class="emi-input2 descInfo description" type="text"></td>
+				</tr>
+				<tr></tr>
+
+
+
+
+			</table>
+
+			<div class="foot margin-top-20">
+				<div class="row">
+					<div class="col-md-4 emi-key3">注意：<span>*</span> 为必填信息</div>
+					<div class="col-md-4 emi-button">
+						<button type="button" class="btn btn-info emi-button btn-allsave">
+							<span class="glyphicon glyphicon-th "></span> 保存
+						</button>
+					</div>
+					<div class="col-md-4"></div>
+				</div><!-- row -->
+			</div><!-- foot -->
+		</div><!-- emi-box -->
+		
+
+	</div><!-- row-contain -->
+
+	<!-- Modal1 -->
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document" style="width:520px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">资产类型</h4>
+				</div>
+
+				<div class="modal-body">
+					<table class="table table-striped table table-hover">
+						<thead>
+							<tr>
+								<td>
+									<button type="button" class="btn btn-info btn-xs btn-add-type">添加类型</button>
+								</td>
+								<td>
+									<button type="button" class="btn btn-success btn-xs type-save">保存</button>
+								</td>
+							</tr>
+						</thead>
+						<thead>
+							<tr>
+								<th>类型</th>
+								<th>备注</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						
+						<tbody class="tbody-type-list">
+							<tr class="tr-type">
+								<td><input type="text" class="modal-add-type addType-name" /></td>
+								<td><input type="text" class="modal-add-type addType-desc" /></td>
+								<td>
+									<button type="button" class="btn btn-primary btn-xs">编辑</button>
+									<button type="button" class="btn btn-warning btn-xs " onclick="removeType(this)">删除</button>
+								</td>
+							</tr>
+						</tbody>
+                        
+					</table>
+
+					<div class="modal-footer">
+						<nav aria-label="Page navigation">
+							<ul class="pagination pagination-sm">
+								<li><a href="#" aria-label="Previous"> <span
+										aria-hidden="true">&laquo;</span>
+								</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#" aria-label="Next"> <span
+										aria-hidden="true">&raquo;</span>
+								</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal2 -->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document" style="width:520px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">资产状态</h4>
+				</div>
+
+				<div class="modal-body">
+					<table class="table table-striped table table-hover">
+						<thead>
+							<tr>
+								<td>
+									<button type="button" class="btn btn-info btn-xs btn-add-state">添加状态</button>
+								</td>
+								<td>
+									<button type="button" class="btn btn-success btn-xs state-save">保存</button>
+								</td>
+							</tr>
+						</thead>
+						<thead>
+							<tr>
+								<th>状态</th>
+								<th>备注</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+
+						<tbody class="tbody-state-list">
+							<tr class="tr-state">
+								<td><input type="text" class="modal-add-type addState-name" /></td>
+								<td><input type="text" class="modal-add-type addState-desc" /></td>
+								<td>
+									<button type="button" class="btn btn-primary btn-xs">编辑</button>
+									<button type="button" class="btn btn-warning btn-xs " onclick="removeState(this)">删除</button>
+								</td>
+							</tr>
+						</tbody>
+
+					</table>
+
+					<div class="modal-footer">
+						<nav aria-label="Page navigation">
+							<ul class="pagination pagination-sm">
+								<li><a href="#" aria-label="Previous"> <span
+										aria-hidden="true">&laquo;</span>
+								</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#" aria-label="Next"> <span
+										aria-hidden="true">&raquo;</span>
+								</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

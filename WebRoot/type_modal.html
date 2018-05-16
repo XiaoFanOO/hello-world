@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>登录</title>
+
+    <!-- Bootstrap -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/login.js"></script>
+
+    
+  </head>
+<body>
+
+
+	<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:420px;">
+    <div class="modal-content login-modal-content">
+    
+      <div class="modal-header modal-header-primary">
+        <h4 class="modal-title" id="myModalLabel">用户登录</h4>
+      </div>
+      
+      <div class="modal-body">
+        <table class="login-table">
+            <tr class="login-tr">
+                <td>用户名：</td>
+                <td><input type="text" class="form-control" placeholder="用户名" /></td>
+            </tr>
+            <tr class="login-tr">
+                <td>密码：</td>
+                <td><input type="password" class="form-control" placeholder="密码" /></td>
+            </tr>
+            <tr class="login-tr">
+                <td>验证码：</td>
+                <td>
+                   <input type="text" maxlength="4" class="form-control login-verify" placeholder="验证码" />
+                   <img class="login-verify-img" src="http://localhost:8080/te-empl/mgr/0/findVerifydCode" />
+                </td>
+            </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" >重置</button>
+        <button type="button" class="btn btn-primary">登录</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

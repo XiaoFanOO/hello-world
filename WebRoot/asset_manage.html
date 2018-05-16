@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>资产管理</title>
+
+    <!-- Bootstrap -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/plugins/my97datepicker/WdatePicker.js"></script>
+    <script src="./js/asset_manage.js"></script>
+    
+  </head>
+<body>
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header ">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand href="#"><span
+					class="glyphicon glyphicon-home"></span>&nbsp;首页</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">资产信息管理 <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">维护记录</a></li>
+					<li><a href="#">资产巡检</a></li>
+					<li><a href="#">统计分析</a></li>
+					<li><a href="#">统计分析</a></li>
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> admin</a></li>
+					<li><a href="#" class="dropdown-toggle">注销</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		
+	</nav>
+
+	<div class="container row-container">
+		<div class="row">
+			<div class="col-md-4">
+				<select class="form-control w120 float-left margin-right-30">
+					    <option value="-1">选择存放地址</option>
+					    <option value="0">教学楼一</option>
+					    <option value="1">教学楼二</option>
+					    <option value="2">学生公寓一</option>
+					    <option value="3">学生公寓二</option>
+			    </select>
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="资产名称"
+						aria-label="...">
+				</div>
+				
+			</div>
+			<!-- /clo-md-5 -->
+
+			<div class="col-md-8">
+				<select class="form-control w120 float-left margin-right-30 select-type">
+				</select> 
+				
+				<select class="form-control w120 float-left margin-right-30 select-state">
+				</select> 
+				
+				<select class="form-control w120 float-left margin-right-30">
+					    <option value="-1">选择负责人</option>
+					    <option value="0">陈伟哲</option>
+					    <option value="1">卢笑语</option>
+					    <option value="2">侯先伦</option>
+					    <option value="3">石耀</option>
+				</select>
+				
+				
+				<div class="input-group w120 float-left margin-right-30 ">
+					<input type="text" class="form-control date" 
+					placeholder="保修截止日期" aria-label="...">
+				</div>
+			    
+			</div>
+			<!-- clo-md-7 -->
+		</div><!-- row -->
+		
+		<div class="container bu-container margin-top-20 margin-bottom-30 emi-button">
+			
+				<button type="button" class="btn btn-primary margin-right-30  ">搜索</button>
+			    <button type="button" class="btn btn-primary margin-right-30 btn-create">
+					<span class="glyphicon glyphicon-plus"></span> 注册资产信息
+				</button>
+			
+		</div>
+		
+		<!-- 数据列表 -->
+		<table class="table table-striped table table-hover margin-top-20">
+		   <thead>
+		      <tr>
+		         <th>存放地址</th>
+		         <th>资产编号</th>
+		         <th>资产名称</th>
+		         <th>资产类型</th>
+		         <th>资产状态</th>
+		         <th>负责人</th>
+		         <th>录入时间</th>
+		         <th>保修期</th>
+		         <th>备注</th>
+		         <th>管理功能选择</th>
+		      </tr>
+		   </thead>
+		   <tbody>
+		      <tr>
+		         <th>主楼</th>
+		         <th>1234</th>
+		         <th>电脑</th>
+		         <th>电子设备</th>
+		         <th>正常使用</th>
+		         <th>吴XX</th>
+		         <th>2010-10-11</th>
+		         <th>7个月</th>
+		         <th>无</th>
+		         <th>
+		            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+		            <button type="button" class="btn btn-success btn-xs">报修</button>
+		            <button type="button" class="btn btn-warning btn-xs">维护</button>
+		            <button type="button" class="btn btn-danger btn-xs">更换</button>
+		            
+		         </th>
+		      </tr>
+		   </tbody>
+		</table>
+		
+		<ul class="pagination">
+			<li><a href="#" aria-label="Previous"> <span
+					aria-hidden="true">&laquo;</span>
+			</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+			</a></li>
+		</ul>
+	</div>
+</body>
+</html>
