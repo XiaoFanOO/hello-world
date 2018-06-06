@@ -29,7 +29,11 @@ body{background:#eeeeee; font-size:12px;}
 .emi-key2{width:140px; height:70px; font-weight: bold; font-size:14px; text-align: right;}
 .emi-key3{font-weight: bold; font-size:10px; }
 .emi-box{width:100%; margin:16px; padding-right:100px; padding-left:100px; padding-top:50px; padding-bottom:50px; background:#FFFFFF; border-radius:5px; }
+.emi-box2{width:100%; margin:16px; padding-right:100px; padding-left:100px; padding-top:50px; padding-bottom:50px; background:#eeeeee; border-radius:5px; }
 .emi-title{display: block; width£º100%; height:35px; font-size:25px; text-align: center; font-family: 'Î¢ÈíÑÅºÚ';}
 .emi-input{width:150px; height:26px; }
 .emi-input2{width:650px; height:72px; }
+.emi-input3{width:300px; height:42px; }
 .emi-select{width: 150px; height: 26px; margin-right: 12px;}
+
+

@@ -37,7 +37,7 @@ public class SupportController {
 			return JSONReturn.buildFailure("验证码为空！");
 		}
 		Object code = request.getSession().getAttribute(SessionKey.VALIDATE_CODE);
-		if(verify.equalsIgnoreCase(String.valueOf(code))){
+		if(!verify.equalsIgnoreCase(String.valueOf(code))){
 			System.out.println("*************");
 			System.out.println(code);
 			System.out.println("************");

@@ -2,9 +2,9 @@ package fan.constant;
 
 
 /**
- * 本源码由TE网络原创出品，www.te5L.com
- * 全套开发视频教程下载地址：http://www.te5l.com/course/36.html
- * 转载请保留版权
+ * 
+ * 
+ * 
  */
 public class TimeFormatConstant {
 

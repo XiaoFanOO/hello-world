@@ -18,7 +18,34 @@ $(function(){
 	 });
 	
 	$('button.btn-create').on('click', ass.init());
+	
+	$('#modal-button1').on('click', function(e){
+		type.showAddBox();
+	});
 });
+
+var type = {
+		 showAddBox : function(){
+			 
+			 $('input.addType-name').val('');
+			 $('input.addType-desc').val('');
+			 Dialog.showModal("#myModal1")
+		 },
+		 save : function(){
+			 
+			 $.verify = true;
+			 
+			 var name = $.verifyFrom('input.addType-name');
+			 var desc = $('input.addType-desc').val();
+			 if(!$.verify) return;
+			 $.post('./mgr/type/addType', {name:name, description:desc}, function(data){
+				 if(!$.isSuccess(data)) return;
+				 Dialog.msg(data.body);
+			 });
+			 $('input.addType-name').val('');
+			 $('input.addType-desc').val('');
+		 }
+};
 
 var ass = {
 		init : function(){
